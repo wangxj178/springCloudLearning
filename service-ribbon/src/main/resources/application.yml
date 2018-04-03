@@ -3,7 +3,20 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 server:
-  port: 8764
+  port: 8765
+management:
+  security:
+    enabled: false
 spring:
   application:
     name: service-ribbon
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: abcd1234
+  cloud:
+    bus:
+      trace:
+        enabled: true
+

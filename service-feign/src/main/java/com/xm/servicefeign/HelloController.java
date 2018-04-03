@@ -12,9 +12,12 @@ public class HelloController {
     @Autowired
     SchedualServiceHi schedualServiceHi;
 
+    /*@Value("${jdbc.username}")
+    String userName;*/
+
     @RequestMapping(value = "/hi",method = RequestMethod.GET)
     public String hi(@RequestParam String name){
-        return schedualServiceHi.sayHiFromClientOne(name);
+        return schedualServiceHi.sayHiFromClientOne(name) ;//+ " - " + userName;
     }
 
 }
